@@ -1,0 +1,16 @@
+<p>comp4 works!</p>
+<ul>
+  <li *ngFor="let item of items">{{ items }}</li>
+</ul>
+<hr />
+<ul>
+  <ng-template ngFor let-item [ngForOf]="items">
+    <li>{{ items }}</li>
+  </ng-template>
+</ul>
+<hr />
+<ul>
+  <li *ngFor="let item of items; let i = index">
+    {{ i + 1 }}{{ ". " }}{{ items }} {{ items.length }}
+  </li>
+</ul>
