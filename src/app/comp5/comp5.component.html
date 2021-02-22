@@ -12,9 +12,15 @@
 <button (click)="increment()">+</button>
 <hr />
 <div [ngSwitch]="count">
-  <span *ngSwitchCase="1">1 ({{ count }})</span>
-  <span *ngSwitchCase="2">2 ({{ count }})</span>
-  <span *ngSwitchCase="3">3 ({{ count }})</span>
-  <span *ngSwitchCase="4">4 ({{ count }})</span>
+  <span *ngSwitchCase="1">1 {{ count }}</span>
+  <span *ngSwitchCase="2">2 {{ count }}</span>
+  <span *ngSwitchCase="3">3 {{ count }}</span>
+  <span *ngSwitchCase="4">4 {{ count }}</span>
   <span *ngSwitchDefault>default ({{ count }})</span>
+</div>
+<hr />
+<div [ngSwitch]="count">
+  <ng-template ngSwitchCase="1">{{ count * 10 }}</ng-template>
+  <ng-template ngSwitchCase="2">{{ count * 100 }}</ng-template>
+  <ng-template ngSwitchDefault>{{ count * 1000 }}</ng-template>
 </div>
